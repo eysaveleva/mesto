@@ -1,0 +1,33 @@
+.info__add {
+  margin: auto;
+  margin-right: 0;
+  background-color:  #000000;
+  background-image: url("../../../images/plus.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 150px;
+  height: 50px;
+  border: 2px solid #FFFFFF;
+}
+
+@media screen and (max-width: 934px) {
+    .info__add {
+      width: 282px;
+      height: 50px;
+      margin: auto;
+      margin-left: 0;
+  }
+}
+
+@media screen and (max-width: 680px) {
+    .info__add {
+      margin: auto;
+    }
+  }
+
+@media screen and (max-width: 320px) {
+  .info__add {
+      width: 282px;
+      height: 50px;
+  }
+}
