@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./pages/index.css">
+  <title>Mesto: базовая функциональность</title>
+</head>
+<body class="page">
+  <header class="header">
+    <img class="header__logo" src="./images/header.svg" alt="логотип">
+  </header>
+  <main>
+    <section class="profile">
+      <img class="profile__image" src="./images/avatar.jpg" alt="Аватар">
+      <div class="profile__info">
+        <div class="profile__block">
+          <h1 class="profile__title">Жак-Ив Кусто</h1>
+          <button class="profile__edit-btn" type="button" title="Редактировать"></button>
+        </div>
+        <p class="profile__subtitle">Исследователь океана</p>
+      </div>
+      <button class="profile__add-btn" type="button" title="Добавить"></button>
+    </section>
+    <section class="elements">
+      <div class="element">
+        <img class="element__image" src="./images/elem16.jpg" alt="Карачаевск">
+        <div class="element__title">
+          <h2 class="element__text">Карачаевск</h2>
+          <button class="element__like-btn" type="button" title="like"></button>
+        </div>
+      </div>
+      <div class="element">
+        <img class="element__image" src="./images/elem24.png" alt="Эльбрус">
+        <div class="element__title">
+          <h2 class="element__text">Гора Эльбрус</h2>
+          <button class="element__like-btn" type="button" title="like"></button>
+        </div>
+      </div>
+      <div class="element">
+        <img class="element__image" src="./images/elem35.png" alt="Домбай">
+        <div class="element__title">
+          <h2 class="element__text">Домбай</h2>
+          <button class="element__like-btn" type="button" title="like"></button>
+        </div>
+      </div>
+      <div class="element">
+        <img class="element__image" src="./images/elem24.png" alt="Эльбрус">
+        <div class="element__title">
+          <h2 class="element__text">Гора Эльбрус</h2>
+          <button class="element__like-btn" type="button" title="like"></button>
+        </div>
+      </div>
+      <div class="element">
+        <img class="element__image" src="./images/elem35.png" alt="Домбай">
+        <div class="element__title">
+          <h2 class="element__text">Домбай</h2>
+          <button class="element__like-btn" type="button" title="like"></button>
+        </div>
+      </div>
+      <div class="element">
+        <img class="element__image" src="./images/elem16.jpg" alt="Карачаевск">
+        <div class="element__title">
+          <h2 class="element__text">Карачаевск</h2>
+          <button class="element__like-btn" type="button" title="like"></button>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <p class="footer__copyright">&copy; 2022. Екатерина Савельева</p>
+  </footer>
+  <div class="popup">
+    <div class="popup__container">
+      <h2 class="popup__title">Редактировать профиль</h2>
+      <form class="popup__form" name="edit" novalidate>
+        <input class="popup__input" id="name-input" type="text" placeholder="Имя"  name="name" minlength="2" maxlength="40" required>
+        <input class="popup__input" id="job-input" type="text" placeholder="О себе" name="about" minlength="2" maxlength="200" required>
+        <button class="popup__submit-btn" type="submit">Сохранить</button>
+      </form>
+      <button class="popup__close-btn" type="button" title="Закрыть окно"></button>
+    </div>
+  </div>
+  <script src="./scripts/index.js"></script>
+</body>
+</html>
