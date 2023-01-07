@@ -1,19 +1,19 @@
 //Создание переменных
 //ПОПАП
-const popupEdit = document.querySelector(".popup_type_edit-profile");
-const popupAddElement = document.querySelector(".popup_type_add-element");
+const popupProfileEdit = document.querySelector(".popup_type_edit-profile");
+const popupElementAdd = document.querySelector(".popup_type_add-element");
 const popupImage = document.querySelector(".popup_type_open-image");
 //КНОПКИ
-const editBtn = document.querySelector(".profile__edit-btn");
-const closeBtn = document.querySelectorAll(".popup__close-btn");
-const addBtn = document.querySelector(".profile__add-btn");
+const popupProfileEditBtn = document.querySelector(".profile__edit-btn");
+const popupCloseBtn = document.querySelectorAll(".popup__close-btn");
+const popupElementAddBtn = document.querySelector(".profile__add-btn");
 
 // переменные профиля
 const profileTitle = document.querySelector(".profile__title");
 const profileSubtitle = document.querySelector(".profile__subtitle");
 
 // Для добавления изображений
-const elements = document.querySelector(".elements");
+const elementsList = document.querySelector(".elements");
 const elementTemplate = document.querySelector(".element-template").content.querySelector(".element");
 
 // открыть картинку
@@ -55,7 +55,7 @@ function closePopup(newWindow) {
 }
 
 // удалить элемент
-function deleteElem(del) {
+function deleteCardElement(del) {
   del.closest('.element').remove();
 }
 //лайк снять поставить
@@ -78,12 +78,12 @@ function preventDefault(evt) {
 // Отрисовка картинок по умолчанию
 function addDefaultElements(elem) {
   elem.forEach(({name, link}) => {
-    createElement(name, link);
+    createCardElement(name, link);
   })
 }
 
 //получить внесенные значения
-function getElement(name, link) {
+function getCardElement(name, link) {
   const element = elementTemplate.cloneNode(true);
   const elementDelete = element.querySelector('.element__delete');
   const elementImg = element.querySelector('.element__image');
@@ -95,7 +95,7 @@ function getElement(name, link) {
   elementImg.src = link;
   elementImg.alt = name;//`${name}.`;
 
-  elementDelete.addEventListener('click', () => deleteElem(elementDelete));
+  elementDelete.addEventListener('click', () => deleteCardElement(elementDelete));
   elementLike.addEventListener('click', () => toggleElemLike(elementLike));
   elementImg.addEventListener('click', () => showPopupBig(elementImg, name));
 
@@ -103,9 +103,9 @@ function getElement(name, link) {
 }
 
 // Добавить фотографию
-function createElement(name, link) {
-  const elementNew = getElement(name, link);
-  elements.prepend(elementNew);
+function createCardElement(name, link) {
+  const elementNew = getCardElement(name, link);
+  elementsList.prepend(elementNew);
 }
 
 //функции для сохранения
@@ -113,7 +113,7 @@ function submitformElement () {
   profileTitle.textContent = profileNameInput.value;
   profileSubtitle.textContent = profileJobInput.value;
 
-  closePopup(popupEdit);
+  closePopup(popupProfileEdit);
 }
 
 function submitFormAddElement(evt) {
@@ -124,18 +124,18 @@ function submitFormAddElement(evt) {
   evt.target.reset()
   //toggleButtonState(inputEditFormList, btnSubmitCardForm, formSetting.inactiveButtonClass);
 
-  createElement(name, link);
-  closePopup(popupAddElement);
+  createCardElement(name, link);
+  closePopup(popupElementAdd);
 }
 //-------------------------------------------------------------------
 //СЛУШАТЕЛИ ПО ДЕЙСТВИЯМ
 // открытие Формы добавления карточки
-addBtn.addEventListener('click', () => {
-  openPopup(popupAddElement);
+popupElementAddBtn.addEventListener('click', () => {
+  openPopup(popupElementAdd);
 });
 
 // Закрытие по нажатию кнопки попапа
-closeBtn.forEach(btn => {
+popupCloseBtn.forEach(btn => {
   const popupWindow = btn.closest('.popup');
   popupWindow.addEventListener('mousedown', (evt) => {
     if (evt.target.classList.contains("popup")){
@@ -146,11 +146,11 @@ closeBtn.forEach(btn => {
 })
 
 // открытие формы редактирования профиля
-editBtn.addEventListener("click", () => {
+popupProfileEditBtn.addEventListener("click", () => {
   profileNameInput.value = profileTitle.textContent;
   profileJobInput.value = profileSubtitle.textContent;
 
-  openPopup(popupEdit);
+  openPopup(popupProfileEdit);
 
 });
 
