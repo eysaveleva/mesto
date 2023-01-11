@@ -30,6 +30,7 @@ const profileJobInput = document.querySelector("#job-input");
 const elementNameInput = document.querySelector("#element-name");
 const elementLinkInput = document.querySelector("#element-link");
 
+
 //-------------------------------------------------------------------
 // Объявление функций
 //закрыть esc
@@ -85,6 +86,7 @@ function getCardElement(name, link) {
   const elementDelete = element.querySelector('.element__delete');
   const elementImg = element.querySelector('.element__image');
   const elementLike = element.querySelector('.element__like-btn');
+
   element.querySelector('.element__text').textContent = name;
   elementImg.src = link;
   elementImg.alt = name;
