@@ -8,4 +8,5 @@
 
 .popup__submit-btn_disabled:hover {
   cursor: none;
+  background-color: inherit;
 }
