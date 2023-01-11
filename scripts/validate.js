@@ -79,7 +79,7 @@ function checkInputValidity(formElement, inputElement, inputErrorClass, errorCla
   }
 }
 
-//функция очистки ошибок
+/*//функция очистки ошибок
 //очистка полей ввода и удаление ошибок валидации
 function resetFormCondition(newWindow) {
   newWindow.querySelectorAll('.popup__input_error')
@@ -88,7 +88,7 @@ function resetFormCondition(newWindow) {
     .forEach(errorElement => errorElement.classList.remove('popup__input-error_active'));
     newWindow.querySelectorAll('.popup__form')
     .forEach(formElement => formElement.reset());
-}
+}*/
 
 //запускаем валидацию
 enableValidation(validationSetting);
