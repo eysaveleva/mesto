@@ -43,7 +43,6 @@ function closePopupByEsc(evt) {
 function openPopup(newWindow) {
   newWindow.classList.add('popup_opened');
   document.addEventListener('keydown', closePopupByEsc);
-  resetFormCondition(newWindow);
 }
 
 //Закрытие
