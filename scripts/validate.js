@@ -79,16 +79,5 @@ function checkInputValidity(formElement, inputElement, inputErrorClass, errorCla
   }
 }
 
-/*//функция очистки ошибок
-//очистка полей ввода и удаление ошибок валидации
-function resetFormCondition(newWindow) {
-  newWindow.querySelectorAll('.popup__input_error')
-    .forEach(inputElement => inputElement.classList.remove('popup__input_error'));
-    newWindow.querySelectorAll('.popup__input-error_active')
-    .forEach(errorElement => errorElement.classList.remove('popup__input-error_active'));
-    newWindow.querySelectorAll('.popup__form')
-    .forEach(formElement => formElement.reset());
-}*/
-
 //запускаем валидацию
 enableValidation(validationSetting);
