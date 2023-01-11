@@ -4,7 +4,6 @@
   cursor: default;
   background-color: inherit;
   opacity: 0.2;
-  cursor: none;
 }
 
 .popup__submit-btn_disabled:hover {
