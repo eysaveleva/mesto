@@ -32,17 +32,23 @@ const elementLinkInput = document.querySelector("#element-link");
 
 //-------------------------------------------------------------------
 // Объявление функций
+//закрыть esc
+function closePopupByEsc(evt) {
+  if (evt.key === 'Escape') {
+    closePopup(document.querySelector(".popup_opened"))
+  }
+}
 
 //Открытие и добавление класса
 function openPopup(newWindow) {
   newWindow.classList.add('popup_opened');
-//document.addEventListener('keydown', handleEscape)
+  document.addEventListener('keydown', closePopupByEsc)
 }
 
 //Закрытие
 function closePopup(newWindow) {
   newWindow.classList.remove('popup_opened');
-//document.removeEventListener('keydown', handleEscape)
+ document.removeEventListener('keydown', closePopupByEsc)
 }
 
 // удалить элемент
@@ -151,30 +157,3 @@ formAddElement.addEventListener('submit', submitFormAddElement);
 
 // отрисовка картинок
 addDefaultElements(initialCards);
-
-
-//------------------------------------------------------------
-//ВАЛИДАЦИЯ В РАЗРАБОТКЕ***
-
-//переменные
-const validationSetting = {
-  formSelector: ".popup__form",
-  inputSelector: ".popup__input",
-  submitButtonSelector: ".popup__submit-btn",
-  inactiveButtonClass: "popup__submit-btn_disabled",
-  inputErrorClass: "popup__input_error",
-  errorClass: "popup__error_visible",
-}
-
-//функции
-function enableValidation(validationSetting) {
-  const formList = Array.from(document.querySelectorAll(validationSetting.formSelector));
-
-  formList.forEach((formElement) => {
-    formElement.addEventListener('submit', (e) => {
-      e.preventDefault();
-    })
-  })
-}
-// проверка
-enableValidation(validationSetting);
