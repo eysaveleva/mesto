@@ -5,11 +5,21 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack --mode production",
-    "dev": "webpack serve"
+    "dev": "webpack serve",
+    "deploy": "gh-pages -d dist",
+    "predeploy": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eysaveleva/mesto.git"
   },
   "author": "Ekaterina Saveleva",
   "keywords": [],
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eysaveleva/mesto/issues"
+  },
+  "homepage": "https://github.com/eysaveleva/mesto#readme",
   "devDependencies": {
     "@babel/core": "^7.22.8",
     "@babel/preset-env": "^7.22.7",
@@ -19,8 +29,6 @@
     "css-loader": "^6.8.1",
     "cssnano": "^6.0.1",
     "gh-pages": "^5.0.0",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist",
     "html-webpack-plugin": "^5.5.3",
     "mini-css-extract-plugin": "^2.7.6",
     "postcss-loader": "^7.3.3",
